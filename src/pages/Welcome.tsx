@@ -6,19 +6,19 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  View
+  View,
 } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { Feather } from "@expo/vector-icons";
 
 import wateringImg from "../assets/watering.png";
 import colors from "../styles/colors";
-import fonts from '../styles/fonts';
-import { useNavigation } from "@react-navigation/core";
+import fonts from "../styles/fonts";
+import { useNavigation } from "@react-navigation/native";
 
 const Welcome: React.FC = () => {
   const navigation = useNavigation();
   function handleStart() {
-    navigation.navigate('UserIdentification')
+    navigation.navigate("UserIdentification");
   }
 
   return (
@@ -30,27 +30,20 @@ const Welcome: React.FC = () => {
           forma fácil
         </Text>
 
-        <Image 
-          source={wateringImg} 
-          style={styles.image} 
-          resizeMode='contain'
-        />
+        <Image source={wateringImg} style={styles.image} resizeMode="contain" />
 
         <Text style={styles.subtitle}>
           Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
           sempre que precisar
         </Text>
 
-        <TouchableOpacity 
-          style={styles.button} 
-          activeOpacity={0.7} 
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.7}
           onPress={handleStart}
         >
           <Text>
-            <Feather 
-              name="chevron-right" 
-              style={styles.buttonIcon} 
-            />
+            <Feather name="chevron-right" style={styles.buttonIcon} />
           </Text>
         </TouchableOpacity>
       </View>
@@ -67,7 +60,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     alignItems: "center",
-    justifyContent: 'space-around',
+    justifyContent: "space-around",
     paddingHorizontal: 20,
   },
   title: {
@@ -84,10 +77,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingHorizontal: 20,
     color: colors.heading,
-    fontFamily: fonts.text
+    fontFamily: fonts.text,
   },
   image: {
-    height: Dimensions.get('window').width * 0.7,
+    height: Dimensions.get("window").width * 0.7,
   },
   button: {
     backgroundColor: colors.green,
